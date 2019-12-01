@@ -152,6 +152,101 @@ p, a:not([href]):not([tabindex]) {
     -webkit-transition-property: color, border-color;
     transition-property: color, border-color;
 }
+
+.profile-page .profile-body .tab-switch {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -12.5px;
+    margin-left: -12.5px;
+}
+
+@media (min-width: 768px)
+.col-md-9 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.profile-page .profile-body .tab-body {
+    border: none;
+    padding: 10px 0;
+}
+.tab-content {
+    font-family: "roboto", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.71;
+}
+
+
+.tab-content > .active {
+    display: block;
+}
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table.table-borderless, .jsgrid .table-borderless.jsgrid-table {
+    border: none;
+}
+
+.pb-4, .py-4 {
+    padding-bottom: 1.5rem !important;
+}
+.mt-5, .my-5 {
+    margin-top: 3rem !important;
+}
+
+@media (min-width: 768px)
+.col-md-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+
+.pb-3, .py-3, .card-revenue-table .revenue-item {
+    padding-bottom: 1rem !important;
+}
+
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+
+.pl-4, .px-4 {
+    padding-left: 1.5rem !important;
+}
+
+
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+
+small, .text-small {
+    font-size: 12px;
+}
+
+p, a:not([href]):not([tabindex]) {
+    color: #212529;
+    font-size: 0.875rem;
+}
+
     </style>
 <div class="row profile-page">
               <div class="col-12">
@@ -164,7 +259,7 @@ p, a:not([href]):not([tabindex]) {
                           <div class="wrapper pl-sm-4">
                             <p class="profile-user-name text-center text-sm-left"><?php echo $user->name;?></p>
                             <div class="wrapper d-flex align-items-center justify-content-center flex-wrap">
-                              <p class="profile-user-designation text-center text-md-left my-2 my-md-0"><?php echo $user->description;?></p>
+                              <p class="profile-user-designation text-center text-md-left my-2 my-md-0"><?php echo $user->briefdescription;?></p>
                               <div class="br-wrapper br-theme-css-stars"><select id="example-css" name="rating" autocomplete="off" style="display: none;">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -204,21 +299,27 @@ p, a:not([href]):not([tabindex]) {
                                 <table class="table table-borderless w-100 mt-4">
                                   <tbody><tr>
                                     <td>
-                                      <strong>Full Name :</strong> Johnathan Deo</td>
+                                      <strong>Username:</strong> <?php echo $user->username;?></td>
                                     <td>
-                                      <strong>Website :</strong> staradmin.com</td>
+                                      <strong>Website:</strong> <?php echo $user->website;?></td>
                                   </tr>
                                   <tr>
                                     <td>
-                                      <strong>Location :</strong> USA</td>
+                                      <strong>Location:</strong> <?php echo $user->location;?></td>
                                     <td>
-                                      <strong>Email :</strong> Richard@staradmin.com</td>
+                                      <strong>Email:</strong> <?php echo $user->email;?></td>
                                   </tr>
                                   <tr>
                                     <td>
-                                      <strong>Languages :</strong> English, German, Spanish.</td>
+                                      <strong>Skills:</strong> <?php 
+foreach ($user->skills as $v) {
+    echo '<i class="fa fa-check-circle-o"></i>' . $v . '  '; 
+}
+                                      
+                                      
+                                      ?></td>
                                     <td>
-                                      <strong>Phone :</strong> +73646 4563</td>
+                                      <strong>About me:</strong> </br><?php echo $user->description; ?></td>
                                   </tr>
                                 </tbody></table>
                               </div>
