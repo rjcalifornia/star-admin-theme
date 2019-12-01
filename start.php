@@ -23,6 +23,9 @@ function star_admin_theme_init() {
 	if (!elgg_is_logged_in()) {
 		elgg_unregister_plugin_hook_handler('output:before', 'layout', 'elgg_views_add_rss_link');
 	}
+        
+        elgg_register_plugin_hook_handler('index','system','star_admin_index');
+
 
 }
 
@@ -113,4 +116,13 @@ function star_admin_theme_setup_head($hook, $type, $data) {
 	);
 
 	return $data;
+}
+ 
+
+
+function star_admin_index() {
+    if (!include_once(dirname(dirname(__FILE__)) . "/star-admin-theme/views/default/custom_index/star_landing_home.php"))
+        return false;
+ 
+    return true;
 }
