@@ -97,10 +97,10 @@ $user = elgg_get_logged_in_user_entity();
             </li>
             <li class="nav-item dropdown  d-xl-inline-block user-dropdown">
               <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <img class="img-xs rounded-circle" src="<?php echo $user->getIconURL('small');?>" alt="Profile image"> </a>
+                <img class="img-xs rounded-circle" src="<?php echo $user->getIconURL('medium');?>" alt="Profile image"> </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
-                  <img class="img-md rounded-circle" src="<?php echo $user->getIconURL('small');?>" alt="Profile image">
+                  <img class="img-md rounded-circle" src="<?php echo $user->getIconURL('medium');?>" alt="Profile image">
                   <p class="mb-1 mt-3 font-weight-semibold"><?php echo $user->username;?></p>
                   <p class="font-weight-light text-muted mb-0"><?php echo $user->email;?></p>
                 </div>
