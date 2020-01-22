@@ -58,7 +58,7 @@ $summary = elgg_echo($key, array($subject_link, $object_link));
                                    
                                     <div class="stages border-left pl-5 pb-4">
                                       <div class="btn btn-icons btn-rounded stage-badge btn-inverse-success">
-                                        <i class="mdi mdi-checkbox-marked-circle-outline"></i>
+                                        <i class="mdi mdi-format-list-checks"></i>
                                       </div>
                                       <div class="d-flex align-items-center mb-2 justify-content-between flex-wrap">
                                         <h5 class="mb-0 mr-2"><?php echo $user->name . ' ' . $summary; ?></h5>

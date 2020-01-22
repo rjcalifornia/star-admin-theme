@@ -354,6 +354,81 @@ p, a:not([href]):not([tabindex]) {
     border-left: none;
 }
 
+@media (min-width: 768px)
+.col-md-3, .lightGallery .image-tile {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.mb-4, .user-profile .side-left .card .overview .about-user, .my-4 {
+    margin-bottom: 1.5rem !important;
+}
+.new-accounts {
+    overflow: hidden;
+    position: relative;
+}
+
+.new-accounts ul.chats {
+    height: 100%;
+    padding: 0;
+    margin-bottom: 0;
+    overflow-x: hidden;
+}
+
+.new-accounts ul.chats li.chat-persons {
+    padding: 15px 0;
+    display: block;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.new-accounts ul.chats li.chat-persons span.image {
+    text-decoration: none;
+}
+
+.new-accounts ul.chats li.chat-persons span.image span.pro-pic {
+    
+    padding: 0;
+    width: 20%;
+    max-width: 40px;
+}
+
+.new-accounts ul.chats li.chat-persons span.image div.user {
+    width: 60%;
+    padding: 5px 10px 0 15px;
+}
+
+.new-accounts ul.chats li.chat-persons span.image div.user p.u-name {
+    margin: 0;
+    color: #212529;
+}
+.new-accounts ul.chats li.chat-persons span.image div.user p.u-designation {
+    margin: 0;
+    color: #212529;
+    font-size: 12px;
+}
+
+.new-accounts ul.chats li.chat-persons span.image span.pro-pic img {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 100%;
+}
+
+.new-accounts ul.chats li.chat-persons a span.pro-pic {
+   
+    padding: 0;
+    width: 10%;
+    max-width: 20px;
+}
+
+.new-accounts ul.chats li.chat-persons span.image span.pro-pic img {
+    max-width: 20%;
+    width: 20%;
+    border-radius: 100%;
+    
+}
+
     </style>
 <div class="row profile-page">
               <div class="col-12">
@@ -443,20 +518,39 @@ p, a:not([href]):not([tabindex]) {
                           <h5 class="my-4">Who to follow</h5>
                           <div class="new-accounts">
                             <ul class="chats ps">
+                                
+                                <?php
+                                $options = array(
+	'owner_guids' => $user->guid,
+	'types' => array('object'),
+	'subtypes' => array('plugin_project'),
+	'limit' => $number,
+	'offset' => 0,
+	'order_by' => 'e.last_action DESC',
+	'pagination' => false,
+);
+                                $_options = elgg_get_entities($options);
+                                
+                                //echo print_r($_options);
+                                foreach ($_options as $t) {
+                              //      echo $t->title;
+                                }
+                                ?>
                               <li class="chat-persons">
-                                <a href="#">
+                                <span class="image">
                                   <span class="pro-pic">
-                                    <img src="../../../assets/images/faces/face2.jpg" alt="profile image"> </span>
+                                      <center>
+                                    <img src="https://www.bootstrapdash.com/demo/star-admin-pro/src/assets/images/faces/face3.jpg" alt="profile image"></center> </span>
                                   <div class="user">
                                     <p class="u-name">Marina Michel</p>
                                     <p class="u-designation">Business Development</p>
                                   </div>
-                                </a>
+                                </span>
                               </li>
                               <li class="chat-persons">
                                 <a href="#">
                                   <span class="pro-pic">
-                                    <img src="../../../assets/images/faces/face3.jpg" alt="profile image"> </span>
+                                    <img src="https://www.bootstrapdash.com/demo/star-admin-pro/src/assets/images/faces/face3.jpg" alt="profile image"> </span>
                                   <div class="user">
                                     <p class="u-name">Stella Johnson</p>
                                     <p class="u-designation">SEO Expert</p>
@@ -464,14 +558,14 @@ p, a:not([href]):not([tabindex]) {
                                 </a>
                               </li>
                               <li class="chat-persons">
-                                <a href="#">
+                                <span class="image">
                                   <span class="pro-pic">
-                                    <img src="../../../assets/images/faces/face4.jpg" alt="profile image"> </span>
+                                    <img src="https://www.bootstrapdash.com/demo/star-admin-pro/src/assets/images/faces/face3.jpg" alt="profile image"> </span>
                                   <div class="user">
                                     <p class="u-name">Peter Joo</p>
                                     <p class="u-designation">UI/UX designer</p>
                                   </div>
-                                </a>
+                                </span>
                               </li>
                             <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></ul>
                           </div>
@@ -481,7 +575,7 @@ p, a:not([href]):not([tabindex]) {
                               <li class="chat-persons">
                                 <a href="#">
                                   <span class="pro-pic">
-                                    <img src="../../../assets/images/faces/face5.jpg" alt="profile image"> </span>
+                                    <img src="https://www.bootstrapdash.com/demo/star-admin-pro/src/assets/images/faces/face3.jpg" alt="profile image"> </span>
                                   <div class="user">
                                     <p class="u-name">Marina Michel</p>
                                     <p class="u-designation">Business Development</p>
@@ -495,7 +589,7 @@ p, a:not([href]):not([tabindex]) {
                               <li class="chat-persons">
                                 <a href="#">
                                   <span class="pro-pic">
-                                    <img src="../../../assets/images/faces/face6.jpg" alt="profile image"> </span>
+                                    <img src="https://www.bootstrapdash.com/demo/star-admin-pro/src/assets/images/faces/face3.jpg" alt="profile image"> </span>
                                   <div class="user">
                                     <p class="u-name">Stella Johnson</p>
                                     <p class="u-designation">SEO Expert</p>
@@ -509,7 +603,7 @@ p, a:not([href]):not([tabindex]) {
                               <li class="chat-persons">
                                 <a href="#">
                                   <span class="pro-pic">
-                                    <img src="../../../assets/images/faces/face7.jpg" alt="profile image"> </span>
+                                    <img src="https://www.bootstrapdash.com/demo/star-admin-pro/src/assets/images/faces/face3.jpg" alt="profile image"> </span>
                                   <div class="user">
                                     <p class="u-name">Peter Joo</p>
                                     <p class="u-designation">UI/UX designer</p>
