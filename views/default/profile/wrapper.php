@@ -3,6 +3,7 @@
  * Profile info box
  */
 $user = elgg_get_page_owner_entity();
+$site_url = elgg_get_site_url();
 ?>
 
 <?php /* We add mrn here because we're doing stupid things with the grid system. Remove this hack */ ?>
@@ -395,7 +396,7 @@ p, a:not([href]):not([tabindex]) {
 }
 
 .new-accounts ul.chats li.chat-persons span.image div.user {
-    width: 60%;
+    
     padding: 5px 10px 0 15px;
 }
 
@@ -520,6 +521,9 @@ p, a:not([href]):not([tabindex]) {
                             <ul class="chats ps">
                                 
                                 <?php
+                                
+                                $plugin_container;
+                                $plugin_image_guid;
                                 $options = array(
 	'owner_guids' => $user->guid,
 	'types' => array('object'),
@@ -527,26 +531,46 @@ p, a:not([href]):not([tabindex]) {
 	'limit' => $number,
 	'offset' => 0,
 	'order_by' => 'e.last_action DESC',
-	'pagination' => false,
+	'pagination' => false, 
 );
                                 $_options = elgg_get_entities($options);
                                 
                                 //echo print_r($_options);
                                 foreach ($_options as $t) {
                               //      echo $t->title;
-                                }
-                                ?>
-                              <li class="chat-persons">
+                                    $plugin_object = get_entity($t->guid);
+                                    //echo $t->guid;
+                                    $img_files = $plugin_object->getScreenshots();
+                                    
+                                    foreach ($img_files as $img) {
+                                        if($img->project_image == 1 )
+                                        {
+                                        $plugin_container = $img->container_guid;
+                                    $plugin_image_guid = $img->guid; 
+                                        }
+                                  
+		}
+                                    
+                                   // $img_files = [];
+                                    
+                                    
+                                    ?>
+                                <li class="chat-persons">
                                 <span class="image">
                                   <span class="pro-pic">
                                       <center>
-                                    <img src="https://www.bootstrapdash.com/demo/star-admin-pro/src/assets/images/faces/face3.jpg" alt="profile image"></center> </span>
+                                    <img src="<?php echo $site_url?>plugins/<?php echo $plugin_container?>/icons/<?php echo $plugin_image_guid?>.jpg" alt="profile image"></center> </span>
                                   <div class="user">
-                                    <p class="u-name">Marina Michel</p>
-                                    <p class="u-designation">Business Development</p>
+                                    <p class="u-name"><?php echo $t->title;?></p>
+                                    <p class="u-designation"><?php echo $t->summary;?></p>
+                                    <p class="u-designation"><?php echo elgg_echo('plugins:category');?>: <?php echo $t->plugincat;?></p>
                                   </div>
                                 </span>
                               </li>
+                                <?php
+                                }
+                                ?>
+                              
                               <li class="chat-persons">
                                 <a href="#">
                                   <span class="pro-pic">
