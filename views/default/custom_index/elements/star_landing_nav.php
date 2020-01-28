@@ -9,7 +9,7 @@
 <nav class="navbar navbar-expand-lg pl-3 pl-sm-0" id="navbar">
     <div class="container">
       <div class="navbar-brand-wrapper d-flex w-100">
-        <img src="<?php echo $site_url?>mod/star-admin-theme/vendors/landing_assets/images/Group2.svg" alt="">
+          <img src="<?php echo $site_url?>mod/star-admin-theme/graphics/logo.svg" style="width: 50px;" alt="">
         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="mdi mdi-menu navbar-toggler-icon"></span>
         </button> 

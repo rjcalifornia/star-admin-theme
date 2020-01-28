@@ -22,13 +22,15 @@ echo elgg_view('custom_index/elements/star_landing_head');
   </header>
   <div class="banner" >
     <div class="container">
-      <h1 class="font-weight-semibold">Search engine optimisation &<br>Marketing.</h1>
-      <h6 class="font-weight-normal text-muted pb-3">Simple is a simple template with a creative design that solves all your marketing and SEO queries.</h6>
+      <h1 class="font-weight-semibold">Introducing a powerful open source<br>social networking engine</h1>
+      <h6 class="font-weight-normal text-muted pb-3">Providing you with the core components needed to build a socially aware web application</h6>
       <div>
-        <button class="btn btn-opacity-light mr-1">Get started</button>
+        <button class="btn btn-opacity-light mr-1">Get elgg</button>
         <button class="btn btn-opacity-success ml-1">Learn more</button>
       </div>
-      <img src="<?php echo $site_url?>mod/star-admin-theme/vendors/landing_assets/images/Group171.svg" alt="" class="img-fluid">
+      
+      <img src="<?php echo $site_url?>mod/star-admin-theme/graphics/logo_full.png" alt="" class="img-fluid" style="width: 500px; padding-top: 40px; padding-bottom: 40px;">
+      
     </div>
   </div>
   <div class="content-wrapper">
