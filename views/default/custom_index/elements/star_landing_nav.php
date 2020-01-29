@@ -31,13 +31,17 @@
             <a class="nav-link" href="#features-section">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#digital-marketing-section">Blog</a>  
+            <a class="nav-link" href="#digital-marketing-section">Features</a>  
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#feedback-section">Testimonials</a>
+            <a class="nav-link" href="#case-studies-section">Guide</a>  
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#feedback-section">Resources</a>
+          </li>
+         
           <li class="nav-item btn-contact-us pl-4 pl-lg-0">
-            <button class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Contact Us</button>
+              <a href="<?php echo $site_url?>activity" style="color:#f2f2f2;"><button class="btn btn-info">Community</button></a>
           </li>
         </ul>
       </div>

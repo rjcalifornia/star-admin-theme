@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+$site = elgg_get_site_entity();
 ?>
 
   <title><?php echo $site->name; ?></title>

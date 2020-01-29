@@ -14,7 +14,7 @@ $user = elgg_get_logged_in_user_entity();
 
 <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.html">
+          <a class="navbar-brand brand-logo" href="<?php echo $site_url?>">
               <p>
             <img src="https://elgg.org/cache/1579351391/default/logo.svg" alt="logo"  height="50"/> </a>
           <a class="navbar-brand brand-logo-mini" href="index.html">
@@ -89,7 +89,7 @@ $user = elgg_get_logged_in_user_entity();
              ?>
              
             <li class="nav-item dropdown">
-              <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <a class="nav-link count-indicator" id="notificationDropdown" href="<?php echo $site_url?>messages/inbox/<?php echo $user->guid;?>">
                 <i class="mdi mdi-email-outline"></i>
                 <span class="count bg-success"><?php echo $num_messages = (int)messages_count_unread();?></span>
               </a>

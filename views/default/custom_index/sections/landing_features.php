@@ -21,7 +21,7 @@
                   
                   Elgg allows developers to kick start their new project with a simple learning curve.
               </p>
-              <a href="#"><p class="readmore-link">Readmore</p></a>  
+              <a href="#"><p class="readmore-link">Read more</p></a>  
             </div>
           </div>
           <div class="grid-margin d-flex justify-content-center">
@@ -30,7 +30,7 @@
               <h5 class="py-3">User <br> authentication</h5>
               <p class="text-muted">
                   Powered by pluggable auth modules, which allow applications to implement custom authentication protocols.</p>
-              <a href="#"><p class="readmore-link">Readmore</p></a>
+              <a href="#"><p class="readmore-link">Read more</p></a>
             </div>
           </div>
           <div class="grid-margin d-flex justify-content-end">
@@ -38,7 +38,7 @@
               <img src="<?php echo $site_url?>mod/star-admin-theme/graphics/seo-and-web.svg" alt="" class="img-icons" width="64">
               <h5 class="py-3">Extendable system <br> of views</h5>
               <p class="text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
-              <a href="#"><p class="readmore-link">Readmore</p></a>
+              <a href="#"><p class="readmore-link">Read more</p></a>
             </div>
           </div>
         </div>
